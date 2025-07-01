@@ -1,4 +1,4 @@
-# vg_cluster# vg_cluster - Sistema de Recomendação de Jogos por Cluster
+# vg_cluster - Sistema de Recomendação de Jogos por Cluster
 
 Este projeto é uma aplicação web simples para recomendar jogos similares baseados em clusters gerados pelo algoritmo K-Means. Ele utiliza dados de vendas regionais de jogos (base `vgsales.csv`) e classifica o jogo informado pelo usuário, retornando os jogos mais parecidos dentro do mesmo cluster.
 
