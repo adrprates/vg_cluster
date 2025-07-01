@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Recomendador de Jogos</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="visualizacao.html">Visualizações</a>
+  </nav>
+  <div class="container">
+    <div class="cluster-info-card" style="margin-top: 40px; padding: 20px; background: #e7f3ff; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.1);">
+      <h1>O que significa cada cluster?</h1>
+      <ul style="list-style: inside disc; font-size: 16px; line-height: 1.5; padding-left: 0;">
+        <li><strong>Cluster 0:</strong> Jogos com vendas mais altas e equilibradas entre as regiões.</li>
+        <li><strong>Cluster 1:</strong> Jogos com vendas moderadas, talvez mais concentradas em uma ou duas regiões.</li>
+        <li><strong>Cluster 2:</strong> Jogos com vendas muito baixas ou concentradas em poucas regiões, podendo ser jogos de nicho ou com pouco alcance.</li>
+      </ul>
+    </div>
+    <h1>Recomende Jogos Similares</h1>
+    <form id="gameForm">
+      <label>Nome do Jogo</label>
+      <input type="text" id="name" placeholder="Nome" required />
+      <label>NA_Sales</label>
+      <input type="number" id="na_sales" step="0.01" required />
+      <label>EU_Sales</label>
+      <input type="number" id="eu_sales" step="0.01" required />
+      <label>JP_Sales</label>
+      <input type="number" id="jp_sales" step="0.01" required />
+      <label>Other_Sales</label>
+      <input type="number" id="other_sales" step="0.01" required />
+      <button type="submit">Buscar Similares</button>
+    </form>
+    <div id="result" style="margin-top: 30px;"></div>
+  </div>
+  <script src="js/cluster.js"></script>
+</body>
+</html>

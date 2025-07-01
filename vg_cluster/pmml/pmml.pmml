@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PMML version="4.2" xmlns="http://www.dmg.org/PMML-4_2">
+  <Header copyright="adria">
+    <Application name="KNIME" version="5.4.4"/>
+  </Header>
+  <DataDictionary numberOfFields="4">
+    <DataField name="NA_Sales" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="EU_Sales" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="JP_Sales" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+    <DataField name="Other_Sales" optype="continuous" dataType="double">
+      <Interval closure="closedClosed" leftMargin="0.0" rightMargin="1.0"/>
+    </DataField>
+  </DataDictionary>
+  <ClusteringModel modelName="k-means" functionName="clustering" modelClass="centerBased" numberOfClusters="3">
+    <MiningSchema>
+      <MiningField name="NA_Sales" invalidValueTreatment="asIs"/>
+      <MiningField name="EU_Sales" invalidValueTreatment="asIs"/>
+      <MiningField name="JP_Sales" invalidValueTreatment="asIs"/>
+      <MiningField name="Other_Sales" invalidValueTreatment="asIs"/>
+    </MiningSchema>
+    <ComparisonMeasure kind="distance">
+      <squaredEuclidean/>
+    </ComparisonMeasure>
+    <ClusteringField field="NA_Sales" compareFunction="absDiff"/>
+    <ClusteringField field="EU_Sales" compareFunction="absDiff"/>
+    <ClusteringField field="JP_Sales" compareFunction="absDiff"/>
+    <ClusteringField field="Other_Sales" compareFunction="absDiff"/>
+    <Cluster name="cluster_0" size="42">
+      <Array n="4" type="real">0.22105728287940868 0.18300187063109186 0.3846100083869163 0.1663287831688967 </Array>
+    </Cluster>
+    <Cluster name="cluster_1" size="488">
+      <Array n="4" type="real">0.03749125801595483 0.0352392640462767 0.0979596419749121 0.0317341842827674 </Array>
+    </Cluster>
+    <Cluster name="cluster_2" size="16068">
+      <Array n="4" type="real">0.004873014081573089 0.0036715727626920464 0.003881315076287727 0.003298540333195957 </Array>
+    </Cluster>
+  </ClusteringModel>
+</PMML>
